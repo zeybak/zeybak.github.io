@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mauro Juarez Ariño — Senior Game Developer & Tech Lead</title>
+    <meta name="description" content="Senior Game Developer with 9+ years shipping games across Unity, Unreal, and Roblox. Console releases, branded experiences, multiplayer architecture.">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mauro Juarez Ariño — Senior Game Developer & Tech Lead">
+    <meta property="og:description" content="Senior Game Developer with 9+ years shipping games across Unity, Unreal, and Roblox.">
+    <meta property="og:url" content="https://zeybak.github.io/">
+    <meta property="og:image" content="https://zeybak.github.io/og_thumbnail.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mauro Juarez Ariño — Senior Game Developer & Tech Lead">
+    <meta name="twitter:description" content="Senior Game Developer with 9+ years shipping games across Unity, Unreal, and Roblox.">
+    <meta name="twitter:image" content="https://zeybak.github.io/og_thumbnail.png">
+
+    <style>
+        :root {
+            --navy: #1A2B4A;
+            --text-dark: #1A2B4A;
+            --text-body: #3A4556;
+            --text-muted: #7A8599;
+            --bg-primary: #FFFFFF;
+            --bg-secondary: #F4F6FA;
+            --bg-panel: #E8EDF5;
+            --divider: #D8DEE9;
+            --link: #1A2B4A;
+            --link-hover: #3A4556;
+
+            --nav-height: 60px;
+            --max-width: 1200px;
+            --content-width: 1080px;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html { scroll-behavior: smooth; scroll-padding-top: var(--nav-height); }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-body);
+            font-size: 16px;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+        a:hover { color: var(--link-hover); }
+
+        /* ---------- NAV ---------- */
+        nav {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            height: var(--nav-height);
+            background: var(--navy);
+            color: #fff;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .nav-inner {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 32px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nav-links {
+            display: flex;
+            gap: 40px;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            transition: color 0.15s ease;
+        }
+        .nav-links a:hover { color: #fff; }
+
+        /* ---------- LAYOUT ---------- */
+        section {
+            padding: 96px 32px;
+        }
+        .container {
+            max-width: var(--content-width);
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-muted);
+            letter-spacing: 0.4em;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        /* ---------- HERO ---------- */
+        #hero {
+            min-height: 100vh;
+            padding-top: calc(var(--nav-height) + 80px);
+            padding-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: var(--bg-primary);
+            position: relative;
+        }
+        .hero-eyebrow {
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+        }
+        .hero-name {
+            font-size: 64px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: -0.02em;
+            line-height: 1.05;
+            margin-bottom: 24px;
+        }
+        .hero-divider {
+            width: 80px;
+            height: 2px;
+            background: var(--navy);
+            margin: 0 auto 40px;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            margin-bottom: 80px;
+            flex-wrap: wrap;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-decoration: none;
+            border-radius: 2px;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .btn-primary {
+            background: var(--navy);
+            color: #fff;
+            border: 1px solid var(--navy);
+        }
+        .btn-primary:hover {
+            background: var(--link-hover);
+            border-color: var(--link-hover);
+            color: #fff;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--navy);
+            border: 1px solid var(--navy);
+        }
+        .btn-secondary:hover {
+            background: var(--navy);
+            color: #fff;
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 40px;
+            border-top: 1px solid var(--divider);
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-dark);
+            line-height: 1.1;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            line-height: 1.4;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 11px;
+            color: var(--text-muted);
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            text-decoration: none;
+            animation: bounce 2s infinite;
+        }
+        .scroll-indicator:hover { color: var(--navy); }
+
+        @keyframes bounce {
+            0%, 100% { transform: translate(-50%, 0); }
+            50% { transform: translate(-50%, 6px); }
+        }
+
+        /* ---------- PROJECTS ---------- */
+        #projects {
+            background: var(--bg-secondary);
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 28px;
+        }
+        .card {
+            background: var(--bg-primary);
+            border: 1px solid var(--divider);
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .card:hover {
+            border-color: var(--navy);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(26, 43, 74, 0.08);
+        }
+        .card-image {
+            aspect-ratio: 16 / 9;
+            background: var(--navy);
+            background-image: linear-gradient(135deg, #1A2B4A 0%, #2c4170 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            text-align: center;
+            padding: 12px;
+        }
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .card-body {
+            padding: 22px 24px 24px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text-dark);
+            letter-spacing: 0.02em;
+            margin-bottom: 8px;
+        }
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-body);
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        .card-meta {
+            font-size: 12px;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+            line-height: 1.5;
+            margin-bottom: 4px;
+        }
+        .card-role {
+            font-size: 12px;
+            color: var(--text-dark);
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            margin-bottom: 14px;
+        }
+        .card-highlights {
+            list-style: none;
+            margin-bottom: 18px;
+            padding: 0;
+        }
+        .card-highlights li {
+            position: relative;
+            padding-left: 14px;
+            font-size: 13px;
+            color: var(--text-body);
+            line-height: 1.55;
+            margin-bottom: 4px;
+        }
+        .card-highlights li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--text-muted);
+        }
+        .card-link {
+            margin-top: auto;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            color: var(--navy);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            align-self: flex-start;
+            border-bottom: 1px solid var(--navy);
+            padding-bottom: 2px;
+            transition: gap 0.2s ease;
+        }
+        .card-link:hover { gap: 10px; color: var(--link-hover); }
+
+        /* ---------- ABOUT ---------- */
+        #about { background: var(--bg-primary); }
+        .about-content {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+        .about-content p {
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 40px 0 32px;
+        }
+        .skill {
+            background: var(--bg-panel);
+            color: var(--text-dark);
+            padding: 6px 14px;
+            border-radius: 2px;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+        }
+        .languages {
+            text-align: center;
+            padding-top: 24px;
+            border-top: 1px solid var(--divider);
+            font-size: 14px;
+            color: var(--text-muted);
+            letter-spacing: 0.04em;
+        }
+
+        /* ---------- CONTACT ---------- */
+        #contact {
+            background: var(--bg-secondary);
+            text-align: center;
+        }
+        .contact-blurb {
+            max-width: 560px;
+            margin: 0 auto 40px;
+            font-size: 16px;
+            color: var(--text-body);
+            line-height: 1.6;
+        }
+        .contact-links {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: var(--navy);
+            color: rgba(255,255,255,0.7);
+            padding: 28px 32px;
+            font-size: 13px;
+        }
+        .footer-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .footer-inner a {
+            color: rgba(255,255,255,0.85);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+        }
+        .footer-inner a:hover { color: #fff; }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+            section { padding: 64px 20px; }
+            .nav-inner { padding: 0 20px; }
+            .nav-links { gap: 20px; }
+            .nav-links a { font-size: 13px; }
+
+            #hero { padding-top: calc(var(--nav-height) + 56px); }
+            .hero-eyebrow { font-size: 12px; }
+            .hero-name { font-size: 40px; }
+            .hero-buttons { margin-bottom: 56px; }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 28px 20px;
+            }
+            .stat-number { font-size: 30px; }
+
+            .section-title { margin-bottom: 40px; }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </div>
+</nav>
+
+<!-- ========== HERO ========== -->
+<section id="hero">
+    <p class="hero-eyebrow">Senior Game Developer / Tech Lead</p>
+    <h1 class="hero-name">Mauro Juarez Ariño</h1>
+    <div class="hero-divider"></div>
+
+    <div class="hero-buttons">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Let's Connect</a>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-number" data-target="9" data-suffix="+">0</div>
+            <div class="stat-label">Years<br>Dev</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number" data-target="10" data-suffix="+">0</div>
+            <div class="stat-label">Shipped<br>Games</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number" data-target="3">0</div>
+            <div class="stat-label">Engines</div>
+        </div>
+        <div class="stat">
+            <div class="stat-number" style="font-size: 22px;">Multi-Platform</div>
+            <div class="stat-label">PC · Console<br>· Mobile</div>
+        </div>
+    </div>
+
+    <a href="#projects" class="scroll-indicator">Scroll ↓</a>
+</section>
+
+<!-- ========== PROJECTS ========== -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <!-- Card 01 -->
+            <article class="card">
+                <div class="card-image"><img src="teratopia.jpg" alt="Teratopia"></div>
+                <div class="card-body">
+                    <h3 class="card-title">TERATOPIA</h3>
+                    <p class="card-desc">Action-adventure with strategy and RPG elements.</p>
+                    <p class="card-meta">Ravegan · Unity / C#</p>
+                    <p class="card-role">Lead / Game Developer</p>
+                    <ul class="card-highlights">
+                        <li>Shipped across PC, PlayStation, and Xbox</li>
+                        <li>Owned gameplay, AI, shaders, and netcode optimization</li>
+                        <li>Led small team and mentored juniors</li>
+                    </ul>
+                    <a class="card-link" href="https://store.steampowered.com/app/1338100/Teratopia/" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 02 -->
+            <article class="card">
+                <div class="card-image"><img src="dungeon_gunfight.png" alt="Dungeon Gunfight"></div>
+                <div class="card-body">
+                    <h3 class="card-title">DUNGEON GUNFIGHT</h3>
+                    <p class="card-desc">Looter shooter where players raid dungeons, collect loot, and challenge bosses while climbing the ranks.</p>
+                    <p class="card-meta">Stormward Studios · Roblox / Luau</p>
+                    <p class="card-role">Lead Developer and Producer</p>
+                    <ul class="card-highlights">
+                        <li>Owned tech stack, design, and LiveOps</li>
+                        <li>18M+ visits</li>
+                        <li>Built combat, loot, and multiplayer systems</li>
+                    </ul>
+                    <a class="card-link" href="https://www.roblox.com/games/18582044627" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 03 -->
+            <article class="card">
+                <div class="card-image"><img src="goo2.jpg" alt="Guardians of Orion: Phase 2"></div>
+                <div class="card-body">
+                    <h3 class="card-title">GUARDIANS OF ORION (PHASE 2)</h3>
+                    <p class="card-desc">Co-op real-time First Person Shooter.</p>
+                    <p class="card-meta">Dankie · Unreal Engine / C++</p>
+                    <p class="card-role">Sr. Game Developer</p>
+                    <ul class="card-highlights">
+                        <li>Network architecture and multiplayer systems</li>
+                        <li>Custom Unreal Engine modifications</li>
+                        <li>Gameplay, AI, and UI work</li>
+                    </ul>
+                    <a class="card-link" href="https://store.steampowered.com/app/407840/Guardians_of_Orion_Phase_2/" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 04 -->
+            <article class="card">
+                <div class="card-image"><img src="griefville.png" alt="Griefville × Chucky"></div>
+                <div class="card-body">
+                    <h3 class="card-title">GRIEFVILLE x CHUCKY</h3>
+                    <p class="card-desc">Survival horror experience built around Universal's Chucky IP.</p>
+                    <p class="card-meta">RocketRide × ON3D × Roblox Game Fund × Universal · Roblox / Luau</p>
+                    <p class="card-role">Lead Game Developer @ ON3D</p>
+                    <ul class="card-highlights">
+                        <li>Owned software architecture and CI/CD pipelines</li>
+                        <li>Led the dev team to ship a high-quality branded live game</li>
+                        <li>Built core gameplay and multiplayer systems</li>
+                    </ul>
+                    <a class="card-link" href="https://www.youtube.com/watch?v=zM9dbxSiI8g" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 05 -->
+            <article class="card">
+                <div class="card-image"><img src="dorfs.jpg" alt="Dorfs"></div>
+                <div class="card-body">
+                    <h3 class="card-title">DORFS</h3>
+                    <p class="card-desc">Multiplayer party game.</p>
+                    <p class="card-meta">Ravegan · Unity / C#</p>
+                    <p class="card-role">Lead Developer</p>
+                    <ul class="card-highlights">
+                        <li>Built the foundational architecture, workflows, and CI/CD pipelines</li>
+                        <li>Mentored junior developers and led code reviews</li>
+                        <li>Led the technical direction of the project</li>
+                    </ul>
+                    <a class="card-link" href="https://store.steampowered.com/app/1707790/Dorfs_Hammers_for_Hire/" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 06 -->
+            <article class="card">
+                <div class="card-image"><img src="frontlinesversus.jpg" alt="Frontlines Versus"></div>
+                <div class="card-body">
+                    <h3 class="card-title">FRONTLINES VERSUS</h3>
+                    <p class="card-desc">Cross-platform PvP shooter.</p>
+                    <p class="card-meta">MAXIMILLIAN × Roblox Game Fund · Roblox / Luau</p>
+                    <p class="card-role">Consultant</p>
+                    <ul class="card-highlights">
+                        <li>Technical consultancy and mentoring for the team</li>
+                        <li>Delivered performance, stability, and cross-platform shipping</li>
+                        <li>Built modular AI, quality presets, FTUE, and workflow pipelines</li>
+                    </ul>
+                    <a class="card-link" href="https://www.roblox.com/games/123804558118054" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 07 -->
+            <article class="card">
+                <div class="card-image"><img src="kovaak.png" alt="KovaaK 2.0: The Meta"></div>
+                <div class="card-body">
+                    <h3 class="card-title">KOVAAK 2.0: THE META</h3>
+                    <p class="card-desc">FPS Aim Trainer.</p>
+                    <p class="card-meta">The Meta × Ravegan · Unreal Engine / C++</p>
+                    <p class="card-role">Engine Tools Developer</p>
+                    <ul class="card-highlights">
+                        <li>Built modular engine tools for Unreal</li>
+                        <li>Empowered artists and designers with custom tooling</li>
+                        <li>Improved workflows for the development team</li>
+                    </ul>
+                    <a class="card-link" href="https://store.steampowered.com/app/824270/KovaaKs/" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+            <!-- Card 08 -->
+            <article class="card">
+                <div class="card-image"><img src="lootland.jpeg" alt="Lootland"></div>
+                <div class="card-body">
+                    <h3 class="card-title">LOOTLAND</h3>
+                    <p class="card-desc">Co-op real-time arcade shooter.</p>
+                    <p class="card-meta">Nitro Games × Ravegan · Unity / C#</p>
+                    <p class="card-role">Lead Developer</p>
+                    <ul class="card-highlights">
+                        <li>Co-developed with Nitro Games as the title's external partner</li>
+                        <li>Led a multi-disciplinary team of programmers and artists</li>
+                        <li>Shipped new enemies, content, features, and skins</li>
+                    </ul>
+                    <a class="card-link" href="https://www.lootlandgame.com/" target="_blank" rel="noopener">See More →</a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== ABOUT ========== -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">About</h2>
+        <div class="about-content">
+            <p>I started making games at 13 by modding them. 15+ years later, I'm still doing it — except now I lead teams that ship across Unity, Unreal, and Roblox, from console releases to branded experiences with Universal.</p>
+
+            <p>I care about gameplay that feels right, code that holds up at scale, and teams that ship on time. When I'm not coding, I'm probably mentoring someone who will.</p>
+
+            <p>Currently leading development at Stormward Studios. Always open to building something great with a team that values craft.</p>
+
+            <div class="skills">
+                <span class="skill">Unity / C#</span>
+                <span class="skill">Unreal Engine / C++</span>
+                <span class="skill">Roblox / Luau</span>
+                <span class="skill">Gameplay Programming</span>
+                <span class="skill">Multiplayer &amp; Netcode</span>
+                <span class="skill">Live Operations</span>
+                <span class="skill">Cross-Platform Shipping</span>
+                <span class="skill">Console Porting</span>
+                <span class="skill">Optimization &amp; Profiling</span>
+                <span class="skill">Software Architecture</span>
+                <span class="skill">CI/CD Pipelines</span>
+                <span class="skill">Technical Leadership</span>
+            </div>
+
+            <div class="languages">Spanish (Native) &nbsp;·&nbsp; English (Advanced)</div>
+        </div>
+    </div>
+</section>
+
+<!-- ========== CONTACT ========== -->
+<section id="contact">
+    <div class="container">
+        <h2 class="section-title">Let's Talk</h2>
+        <p class="contact-blurb">Have a project in mind? Looking for a senior game developer or tech lead? I'd love to hear from you.</p>
+        <div class="contact-links">
+            <a href="mailto:maurojuarezarino@gmail.com" class="btn btn-primary">Email Me</a>
+            <a href="https://www.linkedin.com/in/mjuareza/" class="btn btn-secondary" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer>
+    <div class="footer-inner">
+        <span>© 2026 Mauro Juarez Ariño · Senior Game Developer &amp; Tech Lead</span>
+        <a href="#hero">Back to top ↑</a>
+    </div>
+</footer>
+
+<script>
+    // Stats counter animation
+    (function () {
+        var DURATION = 1500;
+        var nums = document.querySelectorAll('.stat-number[data-target]');
+
+        function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+        function animate(el) {
+            var target = parseInt(el.getAttribute('data-target'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            var start = performance.now();
+
+            function step(now) {
+                var elapsed = now - start;
+                var progress = Math.min(elapsed / DURATION, 1);
+                var value = Math.round(easeOutCubic(progress) * target);
+                el.textContent = value + (progress === 1 ? suffix : '');
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix;
+                }
+            }
+
+            requestAnimationFrame(step);
+        }
+
+        function run() {
+            nums.forEach(animate);
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', run);
+        } else {
+            run();
+        }
+    })();
+</script>
+
+</body>
+</html>
